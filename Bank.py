@@ -4,6 +4,13 @@ from Client import Client
 from pathlib import Path
 
 class Bank:
+    """
+    create bank class
+    there are three function:
+    authentication: Check if the user is existing client by matching name and account number
+    writedata: create CSV file and input record for new users
+    changedata: update transaction record lile withdraw, deposit.
+    """
     name = 'International Bank'
     Users = []
     file_path = None

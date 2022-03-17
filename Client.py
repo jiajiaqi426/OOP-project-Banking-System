@@ -3,7 +3,13 @@ from csv import DictWriter
 from pathlib import Path
 
 class Client:
-    # {account_number: xxxxx, name: "xxxxxx", holdings: xxxx}
+    """{account_number: xxxxx, name: "xxxxxx", holdings: xxxx}
+    init client class
+    there are three function
+    withdraw: check if user has enough balance, update user's new balance
+    deposit : add balance
+    balance: print current balance
+    """
     account = {}
 
     def __init__(self, name, deposit, act_num):
