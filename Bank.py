@@ -3,6 +3,7 @@ import pandas as pd
 from Client import Client
 from pathlib import Path
 
+
 class Bank:
     """
     create bank class
@@ -44,6 +45,16 @@ class Bank:
 
     def changedata(self, input_client: Client):
         file = pd.read_csv(self.file_path)
-        file.loc[file['account_number'] == input_client.account['account_number'], 'holdings'] = input_client.account['holdings']
-        #print(file)
+        file.loc[file['account_number'] == input_client.account['account_number'], 'holdings'] = input_client.account[
+            'holdings']
+        # print(file)
         file.to_csv(self.file_path, index=False)
+
+    def check(self, number):
+        try:
+            number = int(number)
+            return True
+        except ValueError:
+            print("Invalid input! Please enter integer number: ")
+            return False
+
